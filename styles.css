@@ -1,0 +1,130 @@
+
+body, html {
+    background-color: #171717;
+    height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    /* Intro section with name in the center */
+    .intro {
+    height: 100vh; /* Make sure it's 100% of the viewport height */
+    display: flex;
+    align-items: center; /* Horizontally center the content */
+    flex-direction: column; /* Stack the elements vertically */
+    transition: width 2s ease-in-out, transform 2s ease-in-out;
+}
+
+.intro-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intro h1 {
+    align-self: flex-start;
+    font-size: 6rem;
+    color: #f4f4f9;
+    padding: 0;;
+    margin: 0;
+    transition: all 1s ease-in-out;
+}
+
+.intro img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    object-position: 50% 30%;
+    border-radius: 50%;
+    margin-top: 20px;
+    visibility: hidden;
+    align-self: flex-start;
+    transition: all 1s ease-in-out;
+    transform: translateY(-100px); /* Start from 100px above */
+}
+
+.intro p {
+    font-size: 2rem;
+    color: #555;
+    margin-top: 10px;
+    transition: all 1s ease-in-out;
+    text-align: left; /* Left-align the location */
+    align-self: flex-start; /* Align the location text to the left of the name */
+}
+
+    /* Main content layout */
+    .container {
+      display: flex;
+      height: 100vh;
+      transform: translateY(100vh);
+      transition: transform 2s ease-in-out;
+    }
+
+    .left-column, .right-column {
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .left-column {
+        flex: 1;
+        background: #f4f4f9;
+        visibility: hidden;
+        border-right: 2px solid #ddd;
+        position: relative;
+    }
+
+    .right-column {
+        overflow-y: auto;
+        flex:1.5
+    }
+
+    .intro.shrink {
+        transform: scale(40%);
+        transform-origin: 0% 8%;
+    }
+
+    .intro.shrink #name {
+        margin-top: -150px;
+    }
+
+    .intro.shrink h1 {
+        font-size: 500%;
+    }
+
+    .intro.shrink p {
+        font-size: 200%;
+    }
+    
+    .intro.shrink img {
+        visibility: visible;
+        animation: fadeInFromTop 2s forwards;
+    }
+
+    .fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Fade out over 1 second */
+    }
+
+
+    @keyframes fadeInFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-200px); /* Start from above */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End in normal position */
+    }
+    }
+        
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
