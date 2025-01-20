@@ -13,32 +13,20 @@ body, html {
     display: flex;
     align-items: center; /* Horizontally center the content */
     flex-direction: column; /* Stack the elements vertically */
-    transition: width 2s ease-in-out, transform 2s ease-in-out;
+    transition: width 2s ease-in-out, transform 2s ease-in-out, margin 2s ease-in-out;
     justify-content: center;
 }
 
 .intro-content {
     text-align: left;
-    transform: translateY(-175px);
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    white-space: nowrap;
-}
-
-@keyframes typewriter {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes blink {
-    50% { border-color: transparent; }
+    justify-content: center;
+    transition: transform 2s ease-in-out;
 }
 
 .intro h1 {
-    overflow: hidden;
     font-size: 4rem;
-    width: 0;
     align-self: flex-start;
     display: inline-block;
     color: #f4f4f9;
@@ -47,38 +35,21 @@ body, html {
     transition: all 1s ease-in-out;
 }
 
-#greeting {
-    animation: typewriter 1s steps(30, end) 0s forwards, blink 0.6s step-end infinite 6s;
-}
-
-#greeting2 {
-    align-self: flex-start;
-    animation: typewriter 1s steps(30, end) 1s forwards, blink 0.6s step-end infinite 6s;
-}
-
-#name {
-    animation: typewriter 1s steps(30, end) 2s forwards, blink 0.6s step-end infinite 3s;
-}
-
-#title {
-    animation: typewriter 1s steps(30, end) 3s forwards, blink 0.6s step-end infinite 6s;
-}
-
 .intro img {
-    width: 350px;
-    height: 350px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
-    object-position: 50% 30%;
+    object-position: 50% 25%;
     border-radius: 50%;
     margin-top: 20px;
-    visibility: hidden;
+    margin-bottom: 10px;
     align-self: flex-start;
     transition: all 1s ease-in-out;
-    transform: translateY(-100px); /* Start from 100px above */
+    border: 1px solid white;
 }
 
 .intro p {
-    font-size: 2rem;
+    font-size: 3rem;
     color: #555;
     margin-top: 10px;
     transition: all 1s ease-in-out;
@@ -113,53 +84,11 @@ body, html {
     }
 
     .intro.shrink {
-        transform: scale(40%);
-        transform-origin: 0% 8%;
+        flex:1.5;
+        transform: scale(35%);
+        transform-origin: 0% 0%;
     }
-
-    .intro.shrink #name {
-        margin-top: -150px;
-    }
-
-    .intro.shrink h1 {
-        font-size: 500%;
-    }
-
-    .intro.shrink p {
-        font-size: 200%;
-    }
-    
-    .intro.shrink img {
-        height: 350px;
-        width: 350px;
-        visibility: visible;
-        animation: fadeInFromTop 2s forwards;
-        transition: all 2s ease-in-out;
-    }
-
-    .fade-out {
-    opacity: 0;
-    transition: opacity 1s ease-in-out; /* Fade out over 1 second */
-    }
-
-
-    @keyframes fadeInFromTop {
-    0% {
-        opacity: 0;
-        transform: translateY(-200px); /* Start from above */
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0); /* End in normal position */
-    }
-    }
-        
-
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
+    .intro-content.shrink {
+        transform: scale(180%);
+        transform-origin: 0% 0%;
     }
