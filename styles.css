@@ -57,38 +57,43 @@ body, html {
     align-self: flex-start; /* Align the location text to the left of the name */
 }
 
-    /* Main content layout */
-    .container {
-      display: flex;
-      height: 100vh;
-      transform: translateY(100vh);
-      transition: transform 2s ease-in-out;
-    }
+/* Main content layout */
+.container {
+    display: flex;
+    height: 100vh;
+    transform: translateY(100vh);
+    transition: transform 2s ease-in-out;
+}
 
-    .left-column, .right-column {
-      padding: 20px;
-      box-sizing: border-box;
-    }
+.left-column, .right-column {
+    padding: 20px;
+    box-sizing: border-box;
+}
 
-    .left-column {
-        flex: 1;
-        background: #f4f4f9;
-        visibility: hidden;
-        border-right: 2px solid #ddd;
-        position: relative;
-    }
+.left-column {
+    flex: 1;
+    background: #f4f4f9;
+    visibility: hidden;
+    border-right: 2px solid #ddd;
+    position: relative;
+}
 
-    .right-column {
-        overflow-y: auto;
-        flex:1.5
-    }
+.right-column {
+    overflow-y: auto;
+    flex:1.5
+}
 
-    .intro.shrink {
-        flex:1.5;
-        transform: scale(35%);
-        transform-origin: 0% 0%;
-    }
-    .intro-content.shrink {
-        transform: scale(180%);
-        transform-origin: 0% 0%;
-    }
+.right-column h2{
+    color: #f4f4f9;
+}
+
+
+.intro.shrink {
+    flex:1.5;
+    transform: scale(35%);
+    transform-origin: 0% 0%;
+}
+.intro-content.shrink {
+    transform: scale(180%);
+    transform-origin: 0% 0%;
+}
